@@ -3,7 +3,7 @@
 ############################
 
 # make vim the default editor
-set -g EDITOR vim
+set -g EDITOR nvim
 set -u fish_key_bindings fish_vi_key_bindings
 
 # add personal scripts to path
