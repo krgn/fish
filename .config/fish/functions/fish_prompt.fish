@@ -2,24 +2,30 @@ function fish_prompt
   # leave some space between commands
   printf '\n'
 
-  set_color CAEB82
-  printf '%s' (whoami)
+  # line 1: useful information
+  set_color blue --bold
+  printf '┌─['
+
   set_color normal
-  printf ' at '
+  printf (date "+$c2%H$c0:$c2%M$c0:$c2%S")
 
-  set_color 87AFFF
-  printf '%s' (hostname|cut -d . -f 1)
+  set_color blue --bold
+  printf ']─['
+
   set_color normal
-  printf ' in '
+  printf '%s@%s' (whoami) (hostname|cut -d . -f 1)
 
-  set_color 95E454
-  printf '%s' (prompt_pwd)
+  set_color blue --bold
+  printf ']\n'
 
-  # Line 2
-  echo
-  if test $VIRTUAL_ENV
-    printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
- end
- printf '↪ '
- set_color normal
+  # line 2: command
+  printf '└──>'
+
+  set_color normal
+  printf ' %s ' (prompt_pwd)
+
+  set_color blue --bold
+  printf '$ '
+  set_color normal
+
 end
