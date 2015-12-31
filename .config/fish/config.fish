@@ -2,7 +2,8 @@
 # fish shell configuration #
 ############################
 
-# make vim the default editor
+# make neovim the default editor
+alias vim nvim
 set -g EDITOR nvim
 set -u fish_key_bindings fish_vi_key_bindings
 
