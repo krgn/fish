@@ -14,12 +14,6 @@ function fish_prompt
 
   set_color 95E454
   printf '%s' (prompt_pwd)
-  set_color normal
-  printf ' with '
-
-  set_color C0BC6C
-  printf '%d todos' (todo|wc -l|sed -e 's/ *//')
-  set_color normal
 
   # Line 2
   echo
