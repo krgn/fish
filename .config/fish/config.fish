@@ -4,8 +4,7 @@
 
 # make neovim the default editor
 alias vim nvim
-set -g EDITOR nvim
-set -u fish_key_bindings fish_vi_key_bindings
+set -x EDITOR nvim
 
 # add personal scripts to path
 set -g fish_user_paths $fish_user_paths ~/bin
@@ -25,3 +24,6 @@ set -x LESS_TERMCAP_se (printf "\033[0m")
 set -x LESS_TERMCAP_so (printf "\033[38;5;246m")  
 set -x LESS_TERMCAP_ue (printf "\033[0m")  
 set -x LESS_TERMCAP_us (printf "\033[04;38;5;146m") 
+
+# colorize output
+set -x fish_user_paths (cope_path) $fish_user_paths
