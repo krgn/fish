@@ -3,7 +3,6 @@
 ############################
 
 # make neovim the default editor
-alias vim nvim
 set -x EDITOR nvim
 
 # add personal scripts to path
