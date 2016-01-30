@@ -28,3 +28,8 @@ set -x LESS_TERMCAP_us (printf "\033[04;38;5;146m")
 
 # colorize output
 set -x fish_user_paths (cope_path) $fish_user_paths
+
+# source local stuff
+if test -e $HOME/.config/fish/config.local.fish
+  source $HOME/.config/fish/config.local.fish
+end
