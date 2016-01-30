@@ -4,6 +4,8 @@
 
 # make neovim the default editor
 set -x EDITOR nvim
+alias vim 'nvim'
+alias vi 'nvim'
 
 # add personal scripts to path
 set -g fish_user_paths $fish_user_paths ~/bin
