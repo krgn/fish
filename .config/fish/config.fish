@@ -4,11 +4,19 @@
 
 # make neovim the default editor
 set -x EDITOR nvim
-alias vim 'nvim'
+set -x SUDO_EDITOR nvim
+set -x SYSTEMD_EDITOR nvim
+
 alias vi 'nvim'
+alias vim 'nvim'
 
 # add personal scripts to path
 set -g fish_user_paths $fish_user_paths ~/bin
+
+# add LaTeX bins and docs to path
+set -g fish_user_paths $fish_user_paths /usr/local/texlive/2015/bin/x86_64-linux
+set -g MANPATH $MANPATH /usr/local/texlive/2015/texmf-dist/doc/man
+set -g INFOPATH $INFOPATH /usr/local/texlive/2015/texmf-dist/doc/info
 
 # set the default browser
 if [ -n $DISPLAY ]
