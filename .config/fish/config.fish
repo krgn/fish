@@ -9,14 +9,15 @@ set -x SYSTEMD_EDITOR nvim
 
 alias vi 'nvim'
 alias vim 'nvim'
+alias vimdiff 'nvim -d'
 
 # add personal scripts to path
 set -g fish_user_paths $fish_user_paths ~/bin
 
 # add LaTeX bins and docs to path
-set -g fish_user_paths $fish_user_paths /usr/local/texlive/2015/bin/x86_64-linux
-set -g MANPATH $MANPATH /usr/local/texlive/2015/texmf-dist/doc/man
-set -g INFOPATH $INFOPATH /usr/local/texlive/2015/texmf-dist/doc/info
+#set -g fish_user_paths $fish_user_paths /usr/local/texlive/2015/bin/x86_64-linux
+#set -g MANPATH $MANPATH /usr/local/texlive/2015/texmf-dist/doc/man
+#set -g INFOPATH $INFOPATH /usr/local/texlive/2015/texmf-dist/doc/info
 
 # set the default browser
 if [ -n $DISPLAY ]
@@ -35,9 +36,9 @@ set -x LESS_TERMCAP_ue (printf "\033[0m")
 set -x LESS_TERMCAP_us (printf "\033[04;38;5;146m") 
 
 # colorize output
-set -x fish_user_paths (cope_path) $fish_user_paths
+#set -x fish_user_paths (cope_path) $fish_user_paths
 
 # source local stuff
-if test -e $HOME/.config/fish/config.local.fish
+if [ -e $HOME/.config/fish/config.local.fish ]
   source $HOME/.config/fish/config.local.fish
 end
